@@ -24,12 +24,12 @@ class MethodFQNController {
     this.methodFQNService = methodFQNService;
   }
 
-  @GetMapping(path = "/get-details/{name}")
+  @GetMapping(path = "/caller-name/{name}")
   List<MethodFQN> getCallees(@PathVariable("name") String callerName) {
     return methodFQNService.getCallees(callerName);
   }
 
-  @GetMapping(path = "/get-callers-details/{name}")
+  @GetMapping(path = "/callee-name/{name}")
   List<MethodFQN> getCallers(@PathVariable("name") String calleeName) {
     return methodFQNService.getCallers(calleeName);
   }
