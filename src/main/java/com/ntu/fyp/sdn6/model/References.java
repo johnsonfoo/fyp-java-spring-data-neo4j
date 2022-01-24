@@ -30,7 +30,7 @@ public class References {
     return version;
   }
 
-  public FQN getReferencedFQNFQN() {
+  public FQN getReferencedFQN() {
     return referencedFQN;
   }
 }
