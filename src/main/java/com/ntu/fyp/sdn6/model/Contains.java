@@ -30,7 +30,7 @@ public class Contains {
     return version;
   }
 
-  public Fqn getContainedFQN() {
+  public Fqn getContainedFqn() {
     return containedFqn;
   }
 }
