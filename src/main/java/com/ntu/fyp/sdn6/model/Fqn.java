@@ -30,6 +30,9 @@ public class Fqn {
   @Relationship(type = "INSERTS", direction = Relationship.Direction.OUTGOING)
   private List<Inserts> insertedFqns = new ArrayList<>();
 
+  @Relationship(type = "UPDATES", direction = Relationship.Direction.OUTGOING)
+  private List<Updates> updatedFqns = new ArrayList<>();
+
   public Fqn(String name) {
     this.name = name;
   }
@@ -48,5 +51,9 @@ public class Fqn {
 
   public List<Inserts> getInsertedFqns() {
     return insertedFqns;
+  }
+
+  public List<Updates> getUpdatedFqns() {
+    return updatedFqns;
   }
 }
