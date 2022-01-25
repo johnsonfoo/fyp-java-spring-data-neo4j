@@ -37,7 +37,7 @@ public class Inserts {
     return parent;
   }
 
-  public Fqn getInsertedFQN() {
+  public Fqn getInsertedFqn() {
     return insertedFqn;
   }
 }
