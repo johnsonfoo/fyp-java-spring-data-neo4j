@@ -3,6 +3,10 @@ package com.ntu.fyp.sdn6.model;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
+import org.springframework.data.neo4j.core.schema.Relationship;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class represents the Fqn node. Fqn nodes all have property name. Each Fqn node have the
@@ -16,6 +20,9 @@ public class Fqn {
   private Long id;
 
   private String name;
+
+  @Relationship(type = "CONTAINS", direction = Relationship.Direction.OUTGOING)
+  private List<Contains> containedFqns = new ArrayList<>();
 
   public Fqn(String name) {
     this.name = name;
