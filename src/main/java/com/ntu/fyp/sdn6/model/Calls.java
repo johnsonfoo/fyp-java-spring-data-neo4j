@@ -17,12 +17,12 @@ public class Calls {
   private Long id;
 
   @TargetNode
-  private final MethodFqn calledMethodFQN;
+  private final MethodFqn calledMethodFqn;
 
   private final String version;
 
-  public Calls(MethodFqn calledMethodFQN, String version) {
-    this.calledMethodFQN = calledMethodFQN;
+  public Calls(MethodFqn calledMethodFqn, String version) {
+    this.calledMethodFqn = calledMethodFqn;
     this.version = version;
   }
 
@@ -30,7 +30,7 @@ public class Calls {
     return version;
   }
 
-  public MethodFqn getCalledMethodFQN() {
-    return calledMethodFQN;
+  public MethodFqn getCalledMethodFqn() {
+    return calledMethodFqn;
   }
 }
