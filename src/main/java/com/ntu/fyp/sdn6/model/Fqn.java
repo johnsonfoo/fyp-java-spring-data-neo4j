@@ -24,6 +24,9 @@ public class Fqn {
   @Relationship(type = "CONTAINS", direction = Relationship.Direction.OUTGOING)
   private List<Contains> containedFqns = new ArrayList<>();
 
+  @Relationship(type = "REFERENCES", direction = Relationship.Direction.OUTGOING)
+  private List<References> referencedFqns = new ArrayList<>();
+
   public Fqn(String name) {
     this.name = name;
   }
@@ -34,5 +37,9 @@ public class Fqn {
 
   public List<Contains> getContainedFqns() {
     return containedFqns;
+  }
+
+  public List<References> getReferencedFqns() {
+    return referencedFqns;
   }
 }
