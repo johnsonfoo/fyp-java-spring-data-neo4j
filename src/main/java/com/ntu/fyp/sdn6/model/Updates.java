@@ -37,7 +37,7 @@ public class Updates {
     return parent;
   }
 
-  public Fqn getUpdatedFQN() {
+  public Fqn getUpdatedFqn() {
     return updatedFqn;
   }
 }
