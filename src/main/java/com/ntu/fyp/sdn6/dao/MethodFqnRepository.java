@@ -12,5 +12,5 @@ public interface MethodFqnRepository extends Neo4jRepository<MethodFqn, Long> {
 
   List<MethodFqn> findByName(@Param("name") String name);
 
-  List<MethodFqn> findByCalleesCalleeName(@Param("name") String name);
+  List<MethodFqn> findByCalledMethodFqnsCalledMethodFqnName(@Param("name") String name);
 }

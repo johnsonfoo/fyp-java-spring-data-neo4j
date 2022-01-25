@@ -22,6 +22,6 @@ public class MethodFqnService {
   }
 
   public List<MethodFqn> getCallers(String name) {
-    return methodFqnRepository.findByCalleesCalleeName(name);
+    return methodFqnRepository.findByCalledMethodFqnsCalledMethodFqnName(name);
   }
 }
