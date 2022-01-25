@@ -31,4 +31,8 @@ public class Fqn {
   public String getName() {
     return name;
   }
+
+  public List<Contains> getContainedFqns() {
+    return containedFqns;
+  }
 }
