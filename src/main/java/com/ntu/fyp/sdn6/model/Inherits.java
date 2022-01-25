@@ -17,13 +17,13 @@ public class Inherits {
   private Long id;
 
   @TargetNode
-  private final ClassFqn inheritedClassFQN;
+  private final ClassFqn inheritedClassFqn;
 
-  public Inherits(ClassFqn inheritedClassFQN) {
-    this.inheritedClassFQN = inheritedClassFQN;
+  public Inherits(ClassFqn inheritedClassFqn) {
+    this.inheritedClassFqn = inheritedClassFqn;
   }
 
-  public ClassFqn getInheritedClassFQN() {
-    return inheritedClassFQN;
+  public ClassFqn getInheritedClassFqn() {
+    return inheritedClassFqn;
   }
 }
