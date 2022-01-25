@@ -33,6 +33,9 @@ public class Fqn {
   @Relationship(type = "UPDATES", direction = Relationship.Direction.OUTGOING)
   private List<Updates> updatedFqns = new ArrayList<>();
 
+  @Relationship(type = "DELETES", direction = Relationship.Direction.OUTGOING)
+  private List<Deletes> deletedFqns = new ArrayList<>();
+
   public Fqn(String name) {
     this.name = name;
   }
@@ -55,5 +58,9 @@ public class Fqn {
 
   public List<Updates> getUpdatedFqns() {
     return updatedFqns;
+  }
+
+  public List<Deletes> getDeletedFqns() {
+    return deletedFqns;
   }
 }
