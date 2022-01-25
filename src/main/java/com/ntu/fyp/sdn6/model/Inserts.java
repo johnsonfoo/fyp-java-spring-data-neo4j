@@ -6,8 +6,8 @@ import org.springframework.data.neo4j.core.schema.RelationshipProperties;
 import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
- * This class represents the INSERTS relationship. A INSERTS relationship is a directed edge from
- * a FQN node to a FQN node with properties commit, parent.
+ * This class represents the INSERTS relationship. A INSERTS relationship is a directed edge from a
+ * Fqn node to a Fqn node with properties commit, parent.
  */
 @RelationshipProperties
 public class Inserts {
@@ -17,14 +17,14 @@ public class Inserts {
   private Long id;
 
   @TargetNode
-  private final FQN insertedFQN;
+  private final Fqn insertedFqn;
 
   private final String commit;
 
   private final String parent;
 
-  public Inserts(FQN insertedFQN, String commit, String parent) {
-    this.insertedFQN = insertedFQN;
+  public Inserts(Fqn insertedFqn, String commit, String parent) {
+    this.insertedFqn = insertedFqn;
     this.commit = commit;
     this.parent = parent;
   }
@@ -37,7 +37,7 @@ public class Inserts {
     return parent;
   }
 
-  public FQN getInsertedFQN() {
-    return insertedFQN;
+  public Fqn getInsertedFqn() {
+    return insertedFqn;
   }
 }

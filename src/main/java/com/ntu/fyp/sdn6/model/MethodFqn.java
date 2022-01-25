@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class represents the MethodFQN node. MethodFQN nodes all have property name. Each MethodFQN
- * node inherits the relationships Contains, References, Inserts, Updates, Deletes from parent FQN
+ * This class represents the MethodFqn node. MethodFqn nodes all have property name. Each MethodFqn
+ * node inherits the relationships Contains, References, Inserts, Updates, Deletes from parent Fqn
  * and have relationship Calls.
  */
 @Node
-public class MethodFQN extends FQN {
+public class MethodFqn extends Fqn {
 
   @Relationship(type = "CALLS", direction = Relationship.Direction.OUTGOING)
   private List<Calls> callees = new ArrayList<>();
 
-  public MethodFQN(String name) {
+  public MethodFqn(String name) {
     super(name);
   }
 

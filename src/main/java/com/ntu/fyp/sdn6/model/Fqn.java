@@ -5,11 +5,11 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 /**
- * This class represents the FQN node. FQN nodes all have property name. Each FQN node have the
+ * This class represents the Fqn node. Fqn nodes all have property name. Each Fqn node have the
  * relationships Contains, References, Inserts, Updates, Deletes.
  */
 @Node
-public class FQN {
+public class Fqn {
 
   @Id
   @GeneratedValue
@@ -17,7 +17,7 @@ public class FQN {
 
   private String name;
 
-  public FQN(String name) {
+  public Fqn(String name) {
     this.name = name;
   }
 

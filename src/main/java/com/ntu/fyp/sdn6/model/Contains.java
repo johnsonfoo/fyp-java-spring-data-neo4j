@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the CONTAINS relationship. A CONTAINS relationship is a directed edge from
- * a FQN node to a FQN node with property version.
+ * a Fqn node to a Fqn node with property version.
  */
 @RelationshipProperties
 public class Contains {
@@ -17,12 +17,12 @@ public class Contains {
   private Long id;
 
   @TargetNode
-  private final FQN containedFQN;
+  private final Fqn containedFqn;
 
   private final String version;
 
-  public Contains(FQN containedFQN, String version) {
-    this.containedFQN = containedFQN;
+  public Contains(Fqn containedFqn, String version) {
+    this.containedFqn = containedFqn;
     this.version = version;
   }
 
@@ -30,7 +30,7 @@ public class Contains {
     return version;
   }
 
-  public FQN getContainedFQN() {
-    return containedFQN;
+  public Fqn getContainedFqn() {
+    return containedFqn;
   }
 }
