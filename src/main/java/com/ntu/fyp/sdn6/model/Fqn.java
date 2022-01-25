@@ -27,6 +27,9 @@ public class Fqn {
   @Relationship(type = "REFERENCES", direction = Relationship.Direction.OUTGOING)
   private List<References> referencedFqns = new ArrayList<>();
 
+  @Relationship(type = "INSERTS", direction = Relationship.Direction.OUTGOING)
+  private List<Inserts> insertedFqns = new ArrayList<>();
+
   public Fqn(String name) {
     this.name = name;
   }
@@ -41,5 +44,9 @@ public class Fqn {
 
   public List<References> getReferencedFqns() {
     return referencedFqns;
+  }
+
+  public List<Inserts> getInsertedFqns() {
+    return insertedFqns;
   }
 }
