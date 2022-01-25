@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface MethodFQNRepository extends Neo4jRepository<MethodFqn, Long> {
+public interface MethodFqnRepository extends Neo4jRepository<MethodFqn, Long> {
 
   List<MethodFqn> findAll();
 
