@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the CALLS relationship. A CALLS relationship is a directed edge from a
- * MethodFQN caller node to a MethodFQN callee node with property version.
+ * MethodFQN node to a MethodFQN node with property version.
  */
 @RelationshipProperties
 public class Calls {
@@ -17,12 +17,12 @@ public class Calls {
   private Long id;
 
   @TargetNode
-  private final MethodFQN callee;
+  private final MethodFQN calledMethodFQN;
 
   private final String version;
 
-  public Calls(MethodFQN callee, String version) {
-    this.callee = callee;
+  public Calls(MethodFQN calledMethodFQN, String version) {
+    this.calledMethodFQN = calledMethodFQN;
     this.version = version;
   }
 
@@ -30,7 +30,7 @@ public class Calls {
     return version;
   }
 
-  public MethodFQN getCallee() {
-    return callee;
+  public MethodFQN getCalledMethodFQN() {
+    return calledMethodFQN;
   }
 }
