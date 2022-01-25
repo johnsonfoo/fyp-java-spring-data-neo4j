@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the UPDATES relationship. A UPDATES relationship is a directed edge from
- * a FQN node to a FQN node with properties commit, parent.
+ * a Fqn node to a Fqn node with properties commit, parent.
  */
 @RelationshipProperties
 public class Updates {
@@ -17,14 +17,14 @@ public class Updates {
   private Long id;
 
   @TargetNode
-  private final FQN updatedFQN;
+  private final Fqn updatedFqn;
 
   private final String commit;
 
   private final String parent;
 
-  public Updates(FQN updatedFQN, String commit, String parent) {
-    this.updatedFQN = updatedFQN;
+  public Updates(Fqn updatedFqn, String commit, String parent) {
+    this.updatedFqn = updatedFqn;
     this.commit = commit;
     this.parent = parent;
   }
@@ -37,7 +37,7 @@ public class Updates {
     return parent;
   }
 
-  public FQN getUpdatedFQN() {
-    return updatedFQN;
+  public Fqn getUpdatedFQN() {
+    return updatedFqn;
   }
 }

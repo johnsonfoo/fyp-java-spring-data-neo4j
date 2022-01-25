@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the DELETES relationship. A DELETES relationship is a directed edge from
- * a FQN node to a FQN node with properties commit, parent.
+ * a Fqn node to a Fqn node with properties commit, parent.
  */
 @RelationshipProperties
 public class Deletes {
@@ -17,14 +17,14 @@ public class Deletes {
   private Long id;
 
   @TargetNode
-  private final FQN deletedFQN;
+  private final Fqn deletedFqn;
 
   private final String commit;
 
   private final String parent;
 
-  public Deletes(FQN deletedFQN, String commit, String parent) {
-    this.deletedFQN = deletedFQN;
+  public Deletes(Fqn deletedFqn, String commit, String parent) {
+    this.deletedFqn = deletedFqn;
     this.commit = commit;
     this.parent = parent;
   }
@@ -37,7 +37,7 @@ public class Deletes {
     return parent;
   }
 
-  public FQN getDeletedFQN() {
-    return deletedFQN;
+  public Fqn getDeletedFQN() {
+    return deletedFqn;
   }
 }

@@ -2,7 +2,7 @@ package com.ntu.fyp.sdn6.api;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-import com.ntu.fyp.sdn6.model.MethodFQN;
+import com.ntu.fyp.sdn6.model.MethodFqn;
 import com.ntu.fyp.sdn6.service.MethodFQNService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,12 +25,12 @@ class MethodFQNController {
   }
 
   @GetMapping(path = "/caller-name/{name}")
-  List<MethodFQN> getCallees(@PathVariable("name") String callerName) {
+  List<MethodFqn> getCallees(@PathVariable("name") String callerName) {
     return methodFQNService.getCallees(callerName);
   }
 
   @GetMapping(path = "/callee-name/{name}")
-  List<MethodFQN> getCallers(@PathVariable("name") String calleeName) {
+  List<MethodFqn> getCallers(@PathVariable("name") String calleeName) {
     return methodFQNService.getCallers(calleeName);
   }
 

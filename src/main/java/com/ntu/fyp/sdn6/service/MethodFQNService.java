@@ -1,7 +1,7 @@
 package com.ntu.fyp.sdn6.service;
 
 import com.ntu.fyp.sdn6.dao.MethodFQNRepository;
-import com.ntu.fyp.sdn6.model.MethodFQN;
+import com.ntu.fyp.sdn6.model.MethodFqn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +17,11 @@ public class MethodFQNService {
     this.methodFQNRepository = methodFQNRepository;
   }
 
-  public List<MethodFQN> getCallees(String name) {
+  public List<MethodFqn> getCallees(String name) {
     return methodFQNRepository.findByName(name);
   }
 
-  public List<MethodFQN> getCallers(String name) {
+  public List<MethodFqn> getCallers(String name) {
     return methodFQNRepository.findByCalleesCalleeName(name);
   }
 }

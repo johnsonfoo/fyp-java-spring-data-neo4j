@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the INHERITS relationship. A INHERITS relationship is a directed edge from
- * a ClassFQN node to a ClassFQN node.
+ * a ClassFqn node to a ClassFqn node.
  */
 @RelationshipProperties
 public class Inherits {
@@ -17,13 +17,13 @@ public class Inherits {
   private Long id;
 
   @TargetNode
-  private final ClassFQN inheritedClassFQN;
+  private final ClassFqn inheritedClassFQN;
 
-  public Inherits(ClassFQN inheritedClassFQN) {
+  public Inherits(ClassFqn inheritedClassFQN) {
     this.inheritedClassFQN = inheritedClassFQN;
   }
 
-  public ClassFQN getInheritedClassFQN() {
+  public ClassFqn getInheritedClassFQN() {
     return inheritedClassFQN;
   }
 }

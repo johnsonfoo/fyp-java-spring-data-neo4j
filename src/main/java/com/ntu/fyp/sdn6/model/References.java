@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
  * This class represents the REFERENCES relationship. A REFERENCES relationship is a directed edge
- * from a FQN node to a FQN node with property version.
+ * from a Fqn node to a Fqn node with property version.
  */
 @RelationshipProperties
 public class References {
@@ -17,12 +17,12 @@ public class References {
   private Long id;
 
   @TargetNode
-  private final FQN referencedFQN;
+  private final Fqn referencedFqn;
 
   private final String version;
 
-  public References(FQN referencedFQN, String version) {
-    this.referencedFQN = referencedFQN;
+  public References(Fqn referencedFqn, String version) {
+    this.referencedFqn = referencedFqn;
     this.version = version;
   }
 
@@ -30,7 +30,7 @@ public class References {
     return version;
   }
 
-  public FQN getReferencedFQN() {
-    return referencedFQN;
+  public Fqn getReferencedFQN() {
+    return referencedFqn;
   }
 }
