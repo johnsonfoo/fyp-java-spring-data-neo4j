@@ -15,13 +15,13 @@ import java.util.List;
 public class MethodFqn extends Fqn {
 
   @Relationship(type = "CALLS", direction = Relationship.Direction.OUTGOING)
-  private List<Calls> callees = new ArrayList<>();
+  private List<Calls> calledMethodFqns = new ArrayList<>();
 
   public MethodFqn(String name) {
     super(name);
   }
 
-  public List<Calls> getCallees() {
-    return callees;
+  public List<Calls> getCalledMethodFqns() {
+    return calledMethodFqns;
   }
 }
