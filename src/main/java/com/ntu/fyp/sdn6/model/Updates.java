@@ -6,8 +6,8 @@ import org.springframework.data.neo4j.core.schema.RelationshipProperties;
 import org.springframework.data.neo4j.core.schema.TargetNode;
 
 /**
- * This class represents the UPDATES relationship. A UPDATES relationship is a directed edge from
- * a Fqn node to a Fqn node with properties commit, parent.
+ * This class represents the UPDATES relationship. A UPDATES relationship is a directed edge from a
+ * Fqn node to a Fqn node with properties commit, parent.
  */
 @RelationshipProperties
 public class Updates {
