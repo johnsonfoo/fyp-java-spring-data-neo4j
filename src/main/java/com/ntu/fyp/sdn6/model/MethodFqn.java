@@ -11,7 +11,7 @@ import java.util.List;
  * node inherits the relationships Contains, References, Inserts, Updates, Deletes from parent Fqn
  * and have relationship Calls.
  */
-@Node
+@Node("MethodFQN")
 public class MethodFqn extends Fqn {
 
   @Relationship(type = "CALLS", direction = Relationship.Direction.OUTGOING)

@@ -7,7 +7,7 @@ import org.springframework.data.neo4j.core.schema.Node;
  * node inherits the relationships Contains, References, Inserts, Updates, Deletes from parent Fqn
  * and have relationship Inherits.
  */
-@Node
+@Node("ClassFQN")
 public class ClassFqn extends Fqn {
 
   boolean isAbstract;
