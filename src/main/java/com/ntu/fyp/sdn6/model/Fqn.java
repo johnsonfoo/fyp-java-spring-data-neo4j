@@ -8,7 +8,7 @@ import org.springframework.data.neo4j.core.schema.Node;
  * This class represents the Fqn node. Fqn nodes all have property name. Each Fqn node have the
  * relationships Contains, References, Inserts, Updates, Deletes.
  */
-@Node
+@Node("FQN")
 public class Fqn {
 
   @Id
