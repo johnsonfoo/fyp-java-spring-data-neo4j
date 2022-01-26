@@ -32,11 +32,11 @@ public class ClassFqn extends Fqn {
     this.isTest = isTest;
   }
 
-  public boolean isAbstract() {
+  public boolean getIsAbstract() {
     return isAbstract;
   }
 
-  public boolean isTest() {
+  public boolean getIsTest() {
     return isTest;
   }
 
