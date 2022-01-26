@@ -25,7 +25,7 @@ class MethodFqnController {
   }
 
   @GetMapping(path = "/caller-name/{name}")
-  List<MethodFqn> getCallees(@PathVariable("name") String callerName) {
+  MethodFqn getCallees(@PathVariable("name") String callerName) {
     return methodFqnService.getCallees(callerName);
   }
 

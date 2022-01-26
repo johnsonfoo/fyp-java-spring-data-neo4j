@@ -17,7 +17,7 @@ public class MethodFqnService {
     this.methodFqnRepository = methodFqnRepository;
   }
 
-  public List<MethodFqn> getCallees(String name) {
+  public MethodFqn getCallees(String name) {
     return methodFqnRepository.findByName(name);
   }
 
