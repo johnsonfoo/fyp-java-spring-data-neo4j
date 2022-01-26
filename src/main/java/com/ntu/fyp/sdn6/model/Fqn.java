@@ -1,5 +1,7 @@
 package com.ntu.fyp.sdn6.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
@@ -12,6 +14,9 @@ import java.util.List;
  * This class represents the Fqn node. Fqn nodes all have property name. Each Fqn node have the
  * relationships Contains, References, Inserts, Updates, Deletes.
  */
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "name")
 @Node("FQN")
 public class Fqn {
 

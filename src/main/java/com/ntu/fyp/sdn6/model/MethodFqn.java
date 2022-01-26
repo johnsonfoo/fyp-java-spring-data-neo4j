@@ -1,5 +1,7 @@
 package com.ntu.fyp.sdn6.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
@@ -11,6 +13,9 @@ import java.util.List;
  * node inherits the relationships Contains, References, Inserts, Updates, Deletes from parent Fqn
  * and have relationship Calls.
  */
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class,
+    property = "name")
 @Node("MethodFQN")
 public class MethodFqn extends Fqn {
 
