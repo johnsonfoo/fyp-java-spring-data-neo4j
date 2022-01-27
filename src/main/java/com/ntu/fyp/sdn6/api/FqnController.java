@@ -38,4 +38,9 @@ class FqnController {
   List<Fqn> getReferencedFqn(@RequestParam("name") String name) {
     return fqnService.findByReferencedName(name);
   }
+
+  @GetMapping(path = "/inserts/search")
+  List<Fqn> getInsertedFqn(@RequestParam("name") String name) {
+    return fqnService.findByInsertedName(name);
+  }
 }
