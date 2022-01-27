@@ -20,12 +20,12 @@ class MethodFqnController {
   private final MethodFqnService methodFqnService;
 
   @Autowired
-  MethodFqnController(MethodFqnService methodFqnService) {
+  public MethodFqnController(MethodFqnService methodFqnService) {
     this.methodFqnService = methodFqnService;
   }
 
   @GetMapping(path = "/calls/search")
-  List<MethodFqn> getCalledFqn(@RequestParam("name") String name) {
+  public List<MethodFqn> getCalledFqn(@RequestParam("name") String name) {
     return methodFqnService.findByCalledName(name);
   }
 }

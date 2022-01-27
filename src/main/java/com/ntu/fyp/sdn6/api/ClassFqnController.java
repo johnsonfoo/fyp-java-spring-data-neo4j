@@ -20,12 +20,12 @@ class ClassFqnController {
   private final ClassFqnService classFqnService;
 
   @Autowired
-  ClassFqnController(ClassFqnService classFqnService) {
+  public ClassFqnController(ClassFqnService classFqnService) {
     this.classFqnService = classFqnService;
   }
 
   @GetMapping(path = "/inherits/search")
-  List<ClassFqn> getInheritedFqn(@RequestParam("name") String name) {
+  public List<ClassFqn> getInheritedFqn(@RequestParam("name") String name) {
     return classFqnService.findByInheritedName(name);
   }
 }
