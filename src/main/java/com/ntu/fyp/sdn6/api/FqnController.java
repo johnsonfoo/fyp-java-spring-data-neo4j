@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/api/v0/fqns")
 @Tag(name = "fqn")
@@ -25,5 +27,10 @@ class FqnController {
   @GetMapping(path = "/search")
   Fqn getFqn(@RequestParam("name") String name) {
     return fqnService.findByName(name);
+  }
+
+  @GetMapping(path = "/contains/search")
+  List<Fqn> getContainedFqn(@RequestParam("name") String name) {
+    return fqnService.findByContainedName(name);
   }
 }

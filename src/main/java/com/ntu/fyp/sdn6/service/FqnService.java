@@ -5,6 +5,8 @@ import com.ntu.fyp.sdn6.model.Fqn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FqnService {
 
@@ -17,5 +19,8 @@ public class FqnService {
 
   public Fqn findByName(String name) {
     return fqnRepository.findByName(name);
+  }
+  public List<Fqn> findByContainedName(String name) {
+    return fqnRepository.findByContainedFqnsContainedFqnName(name);
   }
 }
