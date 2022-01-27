@@ -26,12 +26,12 @@ class MethodFqnController {
 
   @GetMapping(path = "/caller-name/{name}")
   MethodFqn getCallees(@PathVariable("name") String callerName) {
-    return methodFqnService.getCallees(callerName);
+    return methodFqnService.findByName(callerName);
   }
 
   @GetMapping(path = "/callee-name/{name}")
   List<MethodFqn> getCallers(@PathVariable("name") String calleeName) {
-    return methodFqnService.getCallers(calleeName);
+    return methodFqnService.findByCalledName(calleeName);
   }
 
 }
