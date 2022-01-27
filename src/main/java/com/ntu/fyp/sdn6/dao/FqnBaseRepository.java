@@ -20,4 +20,6 @@ public interface FqnBaseRepository<T extends Fqn> extends Repository<T, Long> {
 
   List<T> findByUpdatedFqnsUpdatedFqnName(@Param("name") String name);
 
+  List<T> findByDeletedFqnsDeletedFqnName(@Param("name") String name);
+
 }
