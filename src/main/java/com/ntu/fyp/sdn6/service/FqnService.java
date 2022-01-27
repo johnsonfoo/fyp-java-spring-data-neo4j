@@ -32,4 +32,8 @@ public class FqnService {
   public List<Fqn> findByInsertedName(String name) {
     return fqnRepository.findByInsertedFqnsInsertedFqnName(name);
   }
+
+  public List<Fqn> findByUpdatedName(String name) {
+    return fqnRepository.findByUpdatedFqnsUpdatedFqnName(name);
+  }
 }
