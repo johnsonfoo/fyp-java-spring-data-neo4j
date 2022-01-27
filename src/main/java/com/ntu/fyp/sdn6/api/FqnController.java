@@ -20,37 +20,37 @@ class FqnController {
   private final FqnService fqnService;
 
   @Autowired
-  FqnController(FqnService fqnService) {
+  public FqnController(FqnService fqnService) {
     this.fqnService = fqnService;
   }
 
   @GetMapping(path = "/search")
-  Fqn getFqn(@RequestParam("name") String name) {
+  public Fqn getFqn(@RequestParam("name") String name) {
     return fqnService.findByName(name);
   }
 
   @GetMapping(path = "/contains/search")
-  List<Fqn> getContainedFqn(@RequestParam("name") String name) {
+  public List<Fqn> getContainedFqn(@RequestParam("name") String name) {
     return fqnService.findByContainedName(name);
   }
 
   @GetMapping(path = "/references/search")
-  List<Fqn> getReferencedFqn(@RequestParam("name") String name) {
+  public List<Fqn> getReferencedFqn(@RequestParam("name") String name) {
     return fqnService.findByReferencedName(name);
   }
 
   @GetMapping(path = "/inserts/search")
-  List<Fqn> getInsertedFqn(@RequestParam("name") String name) {
+  public List<Fqn> getInsertedFqn(@RequestParam("name") String name) {
     return fqnService.findByInsertedName(name);
   }
 
   @GetMapping(path = "/updates/search")
-  List<Fqn> getUpdatedFqn(@RequestParam("name") String name) {
+  public List<Fqn> getUpdatedFqn(@RequestParam("name") String name) {
     return fqnService.findByUpdatedName(name);
   }
 
   @GetMapping(path = "/deletes/search")
-  List<Fqn> getDeletedFqn(@RequestParam("name") String name) {
+  public List<Fqn> getDeletedFqn(@RequestParam("name") String name) {
     return fqnService.findByDeletedName(name);
   }
 }
