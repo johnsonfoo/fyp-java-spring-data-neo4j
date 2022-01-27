@@ -20,7 +20,12 @@ public class FqnService {
   public Fqn findByName(String name) {
     return fqnRepository.findByName(name);
   }
+
   public List<Fqn> findByContainedName(String name) {
     return fqnRepository.findByContainedFqnsContainedFqnName(name);
+  }
+
+  public List<Fqn> findByReferencedName(String name) {
+    return fqnRepository.findByReferencedFqnsReferencedFqnName(name);
   }
 }
