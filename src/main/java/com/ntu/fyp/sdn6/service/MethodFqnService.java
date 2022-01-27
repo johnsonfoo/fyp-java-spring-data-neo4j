@@ -17,11 +17,11 @@ public class MethodFqnService {
     this.methodFqnRepository = methodFqnRepository;
   }
 
-  public MethodFqn findByName(String name) {
+  public MethodFqn getCallees(String name) {
     return methodFqnRepository.findByName(name);
   }
 
-  public List<MethodFqn> findByCalledName(String name) {
+  public List<MethodFqn> getCallers(String name) {
     return methodFqnRepository.findByCalledMethodFqnsCalledMethodFqnName(name);
   }
 }
