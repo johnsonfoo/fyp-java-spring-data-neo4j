@@ -12,10 +12,10 @@ public interface FqnBaseRepository<T extends Fqn> extends Repository<T, Long> {
 
   T findByName(@Param("name") String name);
 
-  List<Fqn> findByContainedFqnsContainedFqnName(@Param("name") String name);
+  List<T> findByContainedFqnsContainedFqnName(@Param("name") String name);
 
-  List<Fqn> findByReferencedFqnsReferencedFqnName(@Param("name") String name);
+  List<T> findByReferencedFqnsReferencedFqnName(@Param("name") String name);
 
-  List<Fqn> findByInsertedFqnsInsertedFqnName(@Param("name") String name);
+  List<T> findByInsertedFqnsInsertedFqnName(@Param("name") String name);
 
 }
