@@ -28,4 +28,8 @@ public class FqnService {
   public List<Fqn> findByReferencedName(String name) {
     return fqnRepository.findByReferencedFqnsReferencedFqnName(name);
   }
+
+  public List<Fqn> findByInsertedName(String name) {
+    return fqnRepository.findByInsertedFqnsInsertedFqnName(name);
+  }
 }
