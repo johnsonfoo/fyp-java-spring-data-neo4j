@@ -36,4 +36,8 @@ public class FqnService {
   public List<Fqn> findByUpdatedName(String name) {
     return fqnRepository.findByUpdatedFqnsUpdatedFqnName(name);
   }
+
+  public List<Fqn> findByDeletedName(String name) {
+    return fqnRepository.findByDeletedFqnsDeletedFqnName(name);
+  }
 }

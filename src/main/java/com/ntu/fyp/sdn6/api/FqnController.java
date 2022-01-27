@@ -48,4 +48,9 @@ class FqnController {
   List<Fqn> getUpdatedFqn(@RequestParam("name") String name) {
     return fqnService.findByUpdatedName(name);
   }
+
+  @GetMapping(path = "/deletes/search")
+  List<Fqn> getDeletedFqn(@RequestParam("name") String name) {
+    return fqnService.findByDeletedName(name);
+  }
 }
