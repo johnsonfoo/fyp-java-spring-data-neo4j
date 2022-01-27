@@ -33,4 +33,9 @@ class FqnController {
   List<Fqn> getContainedFqn(@RequestParam("name") String name) {
     return fqnService.findByContainedName(name);
   }
+
+  @GetMapping(path = "/references/search")
+  List<Fqn> getReferencedFqn(@RequestParam("name") String name) {
+    return fqnService.findByReferencedName(name);
+  }
 }
