@@ -43,4 +43,9 @@ class FqnController {
   List<Fqn> getInsertedFqn(@RequestParam("name") String name) {
     return fqnService.findByInsertedName(name);
   }
+
+  @GetMapping(path = "/updates/search")
+  List<Fqn> getUpdatedFqn(@RequestParam("name") String name) {
+    return fqnService.findByUpdatedName(name);
+  }
 }
