@@ -24,7 +24,7 @@ public class ClassFqn extends Fqn {
   boolean isTest;
 
   @Relationship(type = "INHERITS", direction = Relationship.Direction.OUTGOING)
-  private List<Inherits> inheritedFqns = new ArrayList<>();
+  private List<Inherits> inheritedClassFqns = new ArrayList<>();
 
   public ClassFqn(String name, boolean isAbstract, boolean isTest) {
     super(name);
@@ -40,7 +40,7 @@ public class ClassFqn extends Fqn {
     return isTest;
   }
 
-  public List<Inherits> getInheritedFqns() {
-    return inheritedFqns;
+  public List<Inherits> getInheritedClassFqns() {
+    return inheritedClassFqns;
   }
 }
