@@ -5,6 +5,8 @@ import com.ntu.fyp.sdn6.model.ClassFqn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ClassFqnService {
 
@@ -17,5 +19,9 @@ public class ClassFqnService {
 
   public ClassFqn findByName(String name) {
     return classFqnRepository.findByName(name);
+  }
+
+  public List<ClassFqn> findByInheritedName(String name) {
+    return classFqnRepository.findByInheritedClassFqnsInheritedClassFqnName(name);
   }
 }
