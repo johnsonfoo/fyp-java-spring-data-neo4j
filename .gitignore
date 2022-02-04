@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# General
+.DS_Store
+
+# Neo4j
+neo4j/data/
+neo4j/logs/
+neo4j/import/datalog/
+neo4j/plugins/
+
