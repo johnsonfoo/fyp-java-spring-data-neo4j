@@ -54,6 +54,31 @@ org.apache.commons.csv.CSVParser.1.next()    org.apache.commons.csv.CSVParser.is
 and the interpretation of this line is that the method `org.apache.commons.csv.CSVParser.1.next()`
 calls `org.apache.commons.csv.CSVParser.isClosed()` in the version `7310e5`
 
+## Graph Modeling
+
+A graph database can have more flexibilities than the current facts schema in datalog.
+
+In graph terminology, we can describe `org.apache.commons.csv.CSVParser.1.next()`
+and `org.apache.commons.csv.CSVParser.isClosed()` as two distinct nodes. Then, the `Call`
+relationship can be described as a directed edge between the two nodes. In addition, the
+parameter `Version` on the relationship can be described as a property of the directed edge.
+
+To model the current facts schema as a graph, we first define three different types of nodes (`FQN`
+, `ClassFQN`, `MethodFQN`) where `ClassFQN` and `MethodFQN` both extend `FQN`. Each type of node will
+have its own corresponding attributes and each predicate will be a directed edge between two nodes.
+
+The resulting graph model is:
+
+[FQN]: https://user-images.githubusercontent.com/37036242/153893961-b42dd961-4579-4163-9c03-dcf87ddc0a22.png
+
+[ClassFQN]: https://user-images.githubusercontent.com/37036242/153893928-a8d375f7-f38b-459c-9326-8e4160340e5f.png
+
+[MethodFQN]: https://user-images.githubusercontent.com/37036242/153893923-3944d229-db51-4cc7-93cb-a2dfc9b2cd4f.png
+
+| FQN         | ClassFQN              | MethodFQN               |
+|-------------|-----------------------|-------------------------|
+| ![FQN][FQN] | ![ClassFQN][ClassFQN] | ![MethodFQN][MethodFQN] |
+
 ## Architecture
 
 ![Alt text](https://user-images.githubusercontent.com/37036242/151647266-24412612-7f2a-4013-9468-0a0faca55010.png?raw=true "Title")
