@@ -11,6 +11,49 @@ The existing factbase is not designed to scale.
 Our plan in this project is to adopt graph database for efficient storage. The querying engine also
 needs to be optimized so that the overall performance is significantly improved.
 
+## Datalog Data
+
+The existing factbase facts are stored in datalog. The facts schema in datalog declarations are as
+follows:
+
+```datalog
+.decl IsMethod(fqn: MethodFQN, name: String, version: Version)
+
+.decl Call(caller: MethodFQN, callee: MethodFQN, version: Version)
+
+.decl IsClass(fqn: ClassFQN, isAbstract: Boolean, superClass: ClassFQN,
+isNested: Boolean, outer: ClassFQN, isTestClass: Boolean, version: Version)
+
+.decl Contain(er: FQN, ee: FQN, version: Version)
+
+.decl Ref(er: FQN, ee: FQN, version: Version)
+
+.decl Update(fqn: FQN, pos: FQN, commit: Version, parent: Version)
+
+.decl Insert(fqn: FQN, pos: FQN, commit: Version, parent: Version)
+
+.decl Delete(fqn: FQN, pos: FQN, commit: Version, parent: Version)
+
+.decl IsTestClass(clazz: ClassFQN)
+
+.decl IsAbstractClass(clazz: ClassFQN)
+
+.decl Inherit(sub: ClassFQN, super: ClassFQN)
+```
+
+Each of the `.decl` line defines a predicate, where the parameters and corresponding types are
+enclosed within the pair of parenthesis. For each predicate defined, there is a TAB-seperated CSV
+file containing instances of those predicates.
+
+One line in `Call.facts` is:
+
+```
+org.apache.commons.csv.CSVParser.1.next()    org.apache.commons.csv.CSVParser.isClosed()    7310e5
+```
+
+and the interpretation of this line is that the method `org.apache.commons.csv.CSVParser.1.next()`
+calls `org.apache.commons.csv.CSVParser.isClosed()` in the version `7310e5`
+
 ## Architecture
 
 ![Alt text](https://user-images.githubusercontent.com/37036242/151647266-24412612-7f2a-4013-9468-0a0faca55010.png?raw=true "Title")
