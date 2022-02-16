@@ -165,16 +165,16 @@ CALL apoc.cypher.runFile('file:///scripts/load_update.cypher');
 
 ### REST API Overview
 
-| Endpoint                                        | Description                                                          |
-|-------------------------------------------------|----------------------------------------------------------------------|
-| `/api/v0/fqns/search?name=NAME`                 | Find FQN node with name NAME                                         |
-| `/api/v0/fqns/contains/search?name=NAME`        | Find all FQN nodes that Contains FQN node with name NAME             |
-| `/api/v0/fqns/references/search?name=NAME`      | Find all FQN nodes that References FQN node with name NAME           |
-| `/api/v0/fqns/inserts/search?name=NAME`         | Find all FQN nodes that Inserts FQN node with name NAME              |
-| `/api/v0/fqns/updates/search?name=NAME`         | Find all FQN nodes that Updates FQN node with name NAME              |
-| `/api/v0/fqns/deletes/search?name=NAME`         | Find all FQN nodes that Deletes FQN node with name NAME              |
-| `/api/v0/class-fqns/inherits/search?name=NAME`  | Find all ClassFQN nodes that Inherits ClassFQN node with name NAME   |
-| `/api/v0/method-fqns/inherits/search?name=NAME` | Find all MethodFQN nodes that Inherits MethodFQN node with name NAME |
+| Endpoint                                       | Description                                                        |
+|------------------------------------------------|--------------------------------------------------------------------|
+| `/api/v0/fqns/search?name=NAME`                | Find FQN node with name NAME                                       |
+| `/api/v0/fqns/contains/search?name=NAME`       | Find all FQN nodes that Contains FQN node with name NAME           |
+| `/api/v0/fqns/references/search?name=NAME`     | Find all FQN nodes that References FQN node with name NAME         |
+| `/api/v0/fqns/inserts/search?name=NAME`        | Find all FQN nodes that Inserts FQN node with name NAME            |
+| `/api/v0/fqns/updates/search?name=NAME`        | Find all FQN nodes that Updates FQN node with name NAME            |
+| `/api/v0/fqns/deletes/search?name=NAME`        | Find all FQN nodes that Deletes FQN node with name NAME            |
+| `/api/v0/class-fqns/inherits/search?name=NAME` | Find all ClassFQN nodes that Inherits ClassFQN node with name NAME |
+| `/api/v0/method-fqns/calls/search?name=NAME`   | Find all MethodFQN nodes that Calls MethodFQN node with name NAME  |
 
 ## License Summary
 
