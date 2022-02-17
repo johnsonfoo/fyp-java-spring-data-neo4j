@@ -176,6 +176,47 @@ CALL apoc.cypher.runFile('file:///scripts/load_update.cypher');
 | `/api/v0/class-fqns/inherits/search?name=NAME` | Find all ClassFQN nodes that Inherits ClassFQN node with name NAME |
 | `/api/v0/method-fqns/calls/search?name=NAME`   | Find all MethodFQN nodes that Calls MethodFQN node with name NAME  |
 
+### Benchmarking
+
+To benchmark query performance, write the queries into the file `benchmark.cypher` located in the
+directory `neo4j/import/benchmark` and run the following command while in the
+directory `fyp-java-spring-data-neo4j`:
+
+```shell
+docker exec -i neo4j_container bash < neo4j/import/benchmark/benchmark.sh 
+```
+
+A `benchmark.txt` file containing results of query performance will be available under
+directory `neo4j/import/benchmark/results`.
+
+An example of `benchmark.txt` after running `benchmark.cypher` containing:
+
+```shell
+PROFILE
+MATCH (f:FQN)
+WHERE f.name = "org.apache.commons.csv.TokenMatchersTest.testHasType()"
+RETURN f;
+````
+
+is as follows:
+
+```
+f
+(:FQN:MethodFQN {name: "org.apache.commons.csv.TokenMatchersTest.testHasType()"})
+Plan: "PROFILE"
+Statement: "READ_ONLY"
+Version: "CYPHER 4.4"
+Planner: "COST"
+Runtime: "INTERPRETED"
+Time: 13
+DbHits: 4
+Rows: 1
+Memory (Bytes): 64
+```
+
+Note: Time is in milliseconds.
+
+
 ## License Summary
 
 All rights reserved.
