@@ -40,4 +40,4 @@ neo4j/data/
 neo4j/logs/
 neo4j/import/datalog/
 neo4j/plugins/
-
+neo4j/import/benchmark/results/
