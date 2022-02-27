@@ -117,6 +117,13 @@ neo4j:4.4.3-community
 ```
 
 2. Place datalog files into the folder under path `fyp-java-spring-data-neo4j/neo4j/import/datalog`.
+
+    1. Verify that the names for files under `fyp-java-spring-data-neo4j/neo4j/import/datalog`
+       is renamed according to mapping in `fyp-java-spring-data-neo4j/neo4j/import/util/mapping.csv`
+       .
+    2. If the names do not match, `cd` into `fyp-java-spring-data-neo4j/neo4j/import/util/` and
+       run `./rename.sh`.
+
 3. Start the Docker container created in Step 1 by running the following command:
 
 ```shell
