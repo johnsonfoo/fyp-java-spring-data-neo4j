@@ -1,0 +1,12 @@
+AbstractClass.facts,is_abstract_class.facts
+Call.facts,call.facts
+Contain.facts,contain.facts
+DELETE.facts,delete.facts
+Inherit.facts,inherit.facts
+INSERT.facts,insert.facts
+IsClass.facts,is_class.facts
+IsField.facts,is_field.facts
+IsMethod.facts,is_method.facts
+Reference.facts,reference.facts
+TestClass.facts,is_test_class.facts
+UPDATE.facts,update.facts
