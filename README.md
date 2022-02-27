@@ -137,10 +137,11 @@ docker start neo4j_container
 
 1. Access the Neo4j database at `http://localhost:7474/browser/`.
 2. Before running any import commands, set a uniqueness constraint for nodes to have distinct names
-   with the following command:
+   as well as creating an index on relationships by running the following commands:
 
 ```cypher
-CREATE CONSTRAINT unique_fqn_name IF NOT exists FOR (f:FQN) REQUIRE f.name IS UNIQUE
+CALL apoc.cypher.runSchemaFile('file:///scripts/create_constraint.cypher');
+CALL apoc.cypher.runSchemaFile('file:///scripts/create_index.cypher');
 ```
 
 3. Import the datalog files with the provided scripts by running the following commands:
