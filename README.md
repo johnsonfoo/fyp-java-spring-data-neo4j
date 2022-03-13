@@ -186,40 +186,44 @@ CALL apoc.cypher.runFile('file:///scripts/load_update.cypher');
 
 ### Benchmarking
 
-To benchmark query performance, write the queries into the file `benchmark.cypher` located in the
-directory `neo4j/import/benchmark` and run the following command while in the
-directory `fyp-java-spring-data-neo4j`:
+To benchmark query performance, place the cypher file containing the query in the
+directory `neo4j/import/benchmark`. Then, set the `input_file` variable in the `benchmark.sh`
+file located in the same directory as the cypher file name. Finally, run the following command while
+in the directory `fyp-java-spring-data-neo4j`:
 
 ```shell
 docker exec -i neo4j_container bash < neo4j/import/benchmark/benchmark.sh 
 ```
 
-A `benchmark.txt` file containing results of query performance will be available under
-directory `neo4j/import/benchmark/results`.
+A `benchmark.txt` file containing results of query execution times will be available under
+directory `neo4j/import/benchmark/results`. By default, the `benchmark.sh` script will execute the
+query 10 times. To change the number of executions, change the `n` variable in the
+file `benchmark.sh`.
 
-An example of `benchmark.txt` after running `benchmark.cypher` containing:
+An example of `benchmark.txt` after running `benchmark.sh` with `input_file` variable set
+to `find_at_least_n_callee.cypher` containing:
 
 ```shell
 PROFILE
-MATCH (f:FQN)
-WHERE f.name = "org.apache.commons.csv.TokenMatchersTest.testHasType()"
-RETURN f;
+MATCH (m1:MethodFQN)-[r:CALLS]->(m2:MethodFQN)
+WITH m1, count(r) as rel_cnt
+WHERE rel_cnt >= 10
+RETURN m1.name as name, rel_cnt;
 ````
 
 is as follows:
 
 ```
-f
-(:FQN:MethodFQN {name: "org.apache.commons.csv.TokenMatchersTest.testHasType()"})
-Plan: "PROFILE"
-Statement: "READ_ONLY"
-Version: "CYPHER 4.4"
-Planner: "COST"
-Runtime: "INTERPRETED"
-Time: 13
-DbHits: 4
-Rows: 1
-Memory (Bytes): 64
+396
+18
+10
+9
+7
+6
+6
+5
+5
+4
 ```
 
 Note: Time is in milliseconds.
